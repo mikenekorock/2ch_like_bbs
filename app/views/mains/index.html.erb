@@ -2,5 +2,7 @@
  <ul>
  	<% @mains.each do |main| %>
  	<li><%= main.title %></li>
+ 	<li><%= main.created_at %></li>
  	<% end %>
  </ul>
+ <p><%= link_to"new" , new_main_path %></p>

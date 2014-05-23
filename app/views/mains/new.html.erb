@@ -1,0 +1,19 @@
+<h1>new</h1>
+
+<%= form_for @main do |f| %>
+ <p>
+ 	<%= f.label :name %>
+	<%= f.text_field :name %>	
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+ </p>
+ <p>
+ 	<%= f.label :text %>
+	<%= f.text_area :text %>
+ </p>
+
+ <p>
+ 	<%= f.submit %>
+ </p>
+
+<%end%>
