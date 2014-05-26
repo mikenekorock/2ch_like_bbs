@@ -1,8 +1,14 @@
 <h1>aa</h1>
  <ul>
  	<% @mains.each do |main| %>
- 	<li><%= main.title %></li>
- 	<li><%= main.created_at %></li>
- 	<% end %>
+ 	<li><%= link_to main.title, main_path(main.id) %>(<%=main.subs.count %>)</li>
+ 	<!--<li><%= main.name %></li>
+ 	<li><%= main.text %></li>
+ 	<li><%= main.created_at %></li>--><br>
+ 	<%end%>
+
  </ul>
- <p><%= link_to"new" , new_main_path %></p>
+ <%= render 'form' %>
+ 	<% if @main.errors.any? %>
+ 	<%= @main.erros.inspect %>
+ 	<% end %>

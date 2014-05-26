@@ -1,5 +1,10 @@
 Bbsmake::Application.routes.draw do
-  resources :mains
+
+
+
+  resources :mains do
+    resources :subs, only: [:create]
+  end
   root 'mains#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

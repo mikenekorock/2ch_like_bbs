@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140522173508) do
+ActiveRecord::Schema.define(version: 20140523061133) do
 
   create_table "mains", force: true do |t|
     t.string   "title"
@@ -20,5 +20,17 @@ ActiveRecord::Schema.define(version: 20140522173508) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "subs", force: true do |t|
+    t.string   "title"
+    t.string   "name"
+    t.text     "text"
+    t.boolean  "done",       default: false
+    t.integer  "main_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "subs", ["main_id"], name: "index_subs_on_main_id"
 
 end

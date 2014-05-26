@@ -4,6 +4,11 @@ class MainsController < ApplicationController
 		@main = Main.new
 	end
 
+	def show
+		@main = Main.find(params[:id])
+	end
+
+
 
 	def new
 		@main = Main.new
@@ -13,7 +18,7 @@ class MainsController < ApplicationController
 	def create
 		@main = Main.new(main_params)
 		@main.save
-		redirect_to mains_path
+		redirect_to '/'
 	end
 
 
