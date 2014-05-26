@@ -3,7 +3,7 @@
  <font color="green"><%= @main.name %></font>
  <font color="blue"><%= @main.created_at %></font>
 </p>
- <p><%= @main.text %></p>
+ <p><%= simple_format(@main.text) %></p>
 
  	 	<% @main.subs.each do |sub|; no+=1 %>
  	 	<p><strong>#<%= no %></strong>
