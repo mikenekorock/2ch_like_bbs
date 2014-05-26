@@ -1,25 +1,29 @@
 <h1><%= @main.title %></h1>
-<p>#<%= no = 1 %></p>
-<p><%= @main.name %></p>
-<p><%= @main.text %></p>
+<p><strong>#<%= no = 1 %></strong>
+ <font color="green"><%= @main.name %></font>
+ <font color="blue"><%= @main.created_at %></font>
+</p><br>
+ <p><%= @main.text %></p>
+
  	 	<% @main.subs.each do |sub|; no+=1 %>
- 	 	<li>#<%= no %></li>
- 	 	<li><%= sub.created_at %></li>
- 	 	<li><%= sub.name %></li>
- 	 	<li><%= simple_format(sub.text) %></li><br>
+ 	 	<p><strong>#<%= no %></strong>
+ 	 	 <font color="green"><%= sub.name %></font>
+ 	 	 <font color="blue"><%= sub.created_at %></font>
+ 	 	</p>
+ 	 	<p><%= simple_format(sub.text) %></p><br>
  	 	<%end%>
 	<% if no < 100 %>
- 	 	<div>
+ 	 	<div class="form-group">
  	 		<%= form_for [@main, @main.subs.build] do |f|%>
- 	 		Name<br>
- 	 		<%= f.text_field :name, :value=>"貴様らに名乗る名はないッ！"%><br>
- 	 		Text<br>
- 	 		<%= f.text_area :text %>
- 	 		<%= f.submit %>
+ 	 		<%= f.label :name, class: "control-label"%>
+ 	 		<%= f.text_field :name, value:"貴様らに名乗る名はないッ！", class: "form-control"%><br>
+ 	 		<%= f.label :text, class: "control-label"%>
+ 	 		<%= f.text_area :text, class: "form-control" %>
+ 	 		<%= f.submit class: "btn btn-primary"%>
  	 		<% end %>
  	 	</div>
  	 <% else %>
- 	 		<p>osimai</p>
+ 	 		<p><%= @main.title %> was 100res over.<br>Please create next<%= @main.title %></p>
  	<% end %>
  
  <p><%= link_to"home" , "/" %></p>

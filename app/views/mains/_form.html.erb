@@ -1,11 +1,11 @@
 
 <%= form_for @main do |f| %>
- <p>
- 	<%= f.label :name %>
-	<%= f.text_field :name %>	
+ <div class="form-group">
+ 	<%= f.label :name%>
+	<%= f.text_field :name, value:"貴様らに名乗る名はないッ！" %>	
 	<%= f.label :title %>
 	<%= f.text_field :title %><br>
- </p>
+ </div>
  <p>
  	<%= f.label :text %>
 	<%= f.text_area :text %>

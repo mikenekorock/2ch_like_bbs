@@ -1,13 +1,15 @@
-<h1>aa</h1>
+<h1>Test BBS</h1>
  <ul>
  	<% @mains.each do |main| %>
- 	<li><%= link_to main.title, main_path(main.id) %>(<%=main.subs.count %>)</li>
+ 	<li><%= link_to main.title , main_path(main.id) %>(<%=main.subs.count %>)</li>
  	<!--<li><%= main.name %></li>
  	<li><%= main.text %></li>
  	<li><%= main.created_at %></li>--><br>
  	<%end%>
 
  </ul>
+<p>新しくスレッドを建てる<br>
+※Titleが未記入だとスレッドが建ちません。Titleは必ず入力して下さい。</p>
  <%= render 'form' %>
  	<% if @main.errors.any? %>
  	<%= @main.erros.inspect %>
