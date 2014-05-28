@@ -5,13 +5,13 @@
 </p>
  <p><%= simple_format(@main.text) %></p>
 
- 	 	<% @main.subs.each do |sub|; no+=1 %>
+ 	  <% @main.subs.order(created_at: :desc).each do |sub|; no+=1 %>
  	 	<p><strong>#<%= no %></strong>
  	 	 <font color="green"><%= sub.name %></font>
  	 	 <font color="blue"><%= sub.created_at %></font>
  	 	</p>
  	 	<p><%= simple_format(sub.text) %></p><br>
- 	 	<%end%>
+ 	  <%end%>
 	<% if no < 100 %>
  	 	<div class="form-group">
  	 		<%= form_for [@main, @main.subs.build] do |f|%>
