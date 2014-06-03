@@ -3,7 +3,7 @@ Bbsmake::Application.routes.draw do
 
 
   resources :mains do
-    resources :subs, only: [:create]
+    resources :subs, only: [:create,:destroy]
   end
   root 'mains#index'
 

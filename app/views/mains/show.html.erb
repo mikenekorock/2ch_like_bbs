@@ -1,17 +1,23 @@
 <h1><%= @main.title %></h1>
-<p><strong>#<%= no = 1 %></strong>
+<a name="1"></a><p><strong>#<%= no = 1 %></strong>
  <font color="green"><%= @main.name %></font>
  <font color="blue"><%= @main.created_at %></font>
+ <% @main.id %>
 </p>
- <p><%= simple_format(@main.text) %></p>
+ <%= simple_format(@main.text) %><br>
 
  	  <% @main.subs.order(:created_at).each do |sub|; no+=1 %>
- 	 	<p><strong>#<%= no %></strong>
+ 	 	<p><a name="<%= no %>"></a><strong>#<%= no %></strong>
  	 	 <font color="green"><%= sub.name %></font>
  	 	 <font color="blue"><%= sub.created_at %></font>
+ 	 	 <% sub.main_id %>
+ 	 	 <%# link_to "[Delete]", main_sub_path(sub.main_id, sub.id), method: :delete%><%# , data:{ confirm: "ok?"} %>
  	 	</p>
- 	 	<p><%= simple_format(sub.text) %></p><br>
+ 	 	<%= simple_format(sub.text)%><%#.gsub(/>>(\d{1,3})/, "<a href=#>ohoo</a>") %><br>
  	  <%end%>
+
+
+
 	<% if no < 100 %>
  	 	<div class="form-group">
  	 		<%= form_for [@main, @main.subs.build] do |f|%>
@@ -25,5 +31,5 @@
  	 <% else %>
  	 		<p><%= @main.title %> was 100res over.<br>Please create next<%= @main.title %></p>
  	<% end %>
- 
+
  <p><%= link_to"home" , "/" %></p>

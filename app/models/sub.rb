@@ -1,5 +1,5 @@
 class Sub < ActiveRecord::Base
   belongs_to :main
   validates :text, presence: true
-  #gsub (/>>(\d{1,2})/, "<a href=#></a>"):text
+  #params[:text].gsub(/>>(\d{1,3})/, "<a href=#>ohoo</a>")
 end
