@@ -8,7 +8,7 @@
 
  	  <% @main.subs.order(:created_at).each do |sub|; no+=1 %>
  	 	<p><a name="<%= no %>"></a><strong>#<%= no %></strong>
- 	 	 <font color="green"><%= sub.name %></font>
+ 	 	 <font color="green"><strong><%= sub.name %></strong></font>
  	 	 <font color="blue"><%= sub.created_at %></font>
  	 	 <% sub.main_id %>
  	 	 <%# link_to "[Delete]", main_sub_path(sub.main_id, sub.id), method: :delete%><%# , data:{ confirm: "ok?"} %>
