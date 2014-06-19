@@ -6,7 +6,7 @@ gem 'bootstrap-sass', '2.3.2.0'
 gem 'sprockets', '2.11.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', groups: %w(test development), require: false
-gem 'pg', groups: %w(production), require: false
+#gem 'pg', groups: %w(production), require: false
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
@@ -32,6 +32,10 @@ gem 'jbuilder', '~> 1.2'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
 end
 
 # Use ActiveModel has_secure_password
