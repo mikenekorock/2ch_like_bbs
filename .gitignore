@@ -14,3 +14,12 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+.DS_Store
+vendor/bundle
+nbproject/
+*.swp
+vendor/plugins/tgMdk/tg_mdk.ini
+resources/veritrans/cert.pem
+public/uploaded/
+/.idea
+.rbenv-gemsets
