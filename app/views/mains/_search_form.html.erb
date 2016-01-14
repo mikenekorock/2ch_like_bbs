@@ -1,0 +1,12 @@
+<%= form_tag search_mains_path, method: :get do %>
+ <div class="form-group">
+ 	<%= label_tag :"検索"%>
+	<%= text_field_tag "search[title_cont]", @search_value[:title_cont], placeholder: "スレタイ検索" %><br>
+	<%= text_field_tag "search[subs_text_cont]", @search_value[:subs_text_cont], placeholder: "レス検索" %>	
+ </div>
+
+ <p>
+ 	<%= submit_tag "検索", class: "btn btn-primary" %>
+ </p>
+
+<%end%>

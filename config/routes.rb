@@ -3,6 +3,9 @@ Bbsmake::Application.routes.draw do
 
 
   resources :mains do
+    collection do
+      get 'search'   
+    end
     resources :subs, only: [:create,:destroy]
   end
   root 'mains#index'

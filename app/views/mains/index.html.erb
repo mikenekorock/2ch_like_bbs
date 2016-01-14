@@ -1,5 +1,13 @@
 <h1>Test BBS</h1>
+ 	<% if @main.errors.any? %>
+ 	  <% @main.errors.full_messages.each do |message|%>
+ 	    <font color="red"><%= message %></font>
+ 	  <% end %>
+ 	  <%#= @main.errors.inspect %>
+ 	<% end %>
+
  <ul>
+ <%= render 'search_form' %>
  	<% @mains.each do |main| %>
  	<li><%= link_to main.title , main_path(main.id) %>(<%=main.subs.count %>)
  		<%# link_to "[Delete]", main_path(main.id), method: :delete%></li>
@@ -7,11 +15,11 @@
  	<li><%= main.text %></li>
  	<li><%= main.created_at %></li>--><br>
  	<%end%>
-
  </ul>
+
+
+ 	<p><%= paginate(@mains) %></p>
 <p>新しくスレッドを建てる<br>
 ※Titleが未記入だとスレッドが建ちません。Titleは必ず入力して下さい。</p>
  <%= render 'form' %>
- 	<% if @main.errors.any? %>
- 	<%= @main.erros.inspect %>
- 	<% end %>
+
